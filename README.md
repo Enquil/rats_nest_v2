@@ -36,8 +36,7 @@
 
 * Identified Main Categories
   * Clothing
-  * Equipment
-  * Accessories
+  * Equipment and Accessories
   * Supplements
 
 ### ***Category***
@@ -46,17 +45,8 @@
 |      Key      |             ValueType           |
 | ------------- | ------------------------------- |
 |     ID/PK     |             IntField            |
-|     Parent    |               Self              |
-|     Name      |         Text/CharField          |
-| Friendly Name |         Text/CharField          |
-
-### ***SubCategory***
-
-***Model Table***
-|      Key      |             ValueType           |
-| ------------- | ------------------------------- |
-|     ID/PK     |             IntField            |
-|     Parent    |      ForeignKey (Category)      |
+|     Parent    |         ForeignKey(Self)        |
+|   Is_Parent   |              Boolean            |
 |     Name      |         Text/CharField          |
 | Friendly Name |         Text/CharField          |
 
@@ -68,17 +58,18 @@
 |     ID/PK     |             IntField            |
 |      SKU      |             IntField            |
 |    Category   |      ForeignKey (Category)      |
-|  SubCategory  |     ForeignKey (SubCategory)    |
 |     Name      |         Text/CharField          |
 |     Brand     |            CharField            |
 |  Description  |            TextField            |
+| Feature List  |          Char/TextField         |
 |  Male/Female  |            CharField            |
 |   Has Size    |             Boolean             |
 |   Image Url   |             IMG URL             |
 |     Price     |           DecimalField          |
 |     Rating    |           DecimalField          |
 
-* If Man/Woman is None, item should be considered Unisex
+* If Man/Woman is None, product should be considered Unisex
+* If has_size is true, need to differentiate between shoes and other clothing
 
 ***
 ***
