@@ -1,6 +1,16 @@
 from django.db import models
 
 
+@admin.register(Domain)
+class Domain(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Domains'
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+
 @admin.register(Category)
 class Category(models.Model):
 
