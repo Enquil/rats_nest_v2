@@ -35,9 +35,9 @@
 ## Models
 
 * Identified Main Categories
-  * Clothing
-  * Equipment and Accessories
-  * Supplements
+  * Clothing and Accessories
+  * Equipment
+  * Nutrition and Supplements
 
 ### ***Category***
 
@@ -46,6 +46,7 @@
 | ------------- | ------------------------------- |
 |     ID/PK     |             IntField            |
 |     Parent    |         ForeignKey(Self)        |
+|     Domain    |           ForeignKey()          |
 |   Is_Parent   |              Boolean            |
 |     Name      |         Text/CharField          |
 | Friendly Name |         Text/CharField          |

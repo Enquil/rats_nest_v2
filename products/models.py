@@ -1,6 +1,7 @@
 from django.db import models
 
 
+@admin.register(Category)
 class Category(models.Model):
 
     class Meta:
@@ -8,6 +9,10 @@ class Category(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    parent = models.ForeignKey(self,
+                               null=True,
+                               blank=True,
+                               on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name

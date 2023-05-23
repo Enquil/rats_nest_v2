@@ -16,3 +16,10 @@
 #account-dropdown {
     margin-top: 12px;
 }
+
+/* Navbar lower links */
+
+.domain-link,
+.service-link {
+    font-size: 20px;
+}
